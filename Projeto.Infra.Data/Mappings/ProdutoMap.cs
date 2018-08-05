@@ -12,23 +12,25 @@ namespace Projeto.Infra.Data.Mappings
     {
         public ProdutoMap()
         {
-	    Table("TB_PRODUTO");
+            ToTable("TB_PRODUTO");
 
-            HasKey(p => p.IdProduto)
-		.HasColumnName("IDT_PRODUTO");
+            HasKey(p => p.IdProduto);
+
+            Property(p => p.IdProduto)
+                .HasColumnName("IDT_PRODUTO");
 
             Property(p => p.Nome)
-		.HasColumnName("NOM_PRODUTO")
+                .HasColumnName("NOM_PRODUTO")
                 .HasMaxLength(50)
                 .IsRequired();
 
             Property(p => p.Preco)
-		.HasColumnName("VLR_PRODUTO")
-                .HasPrecision(18,2)
+                .HasColumnName("VLR_PRODUTO")
+                .HasPrecision(18, 2)
                 .IsRequired();
 
             Property(p => p.Quantidade)
-		.HasColumnName("NUM_PRODUTO")
+                .HasColumnName("NUM_PRODUTO")
                 .IsRequired();
 
             HasRequired(p => p.Estoque)

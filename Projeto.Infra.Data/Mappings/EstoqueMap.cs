@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace Projeto.Infra.Data.Mappings
 {
-    public class EstoqueMap : EntityTypeConfiguration<Estoque>
-    {
-        public EstoqueMap()
-        {
-	    Table("TB_ESTOQUE");
+	public class EstoqueMap : EntityTypeConfiguration<Estoque>
+	{
+		public EstoqueMap()
+		{
+			ToTable("TB_ESTOQUE");
 
-            HasKey(e => e.IdEstoque)
-		.HasColumnName("IDT_ESTOQUE");
+			HasKey(e => e.IdEstoque);
 
-            Property(e => e.Nome)
-		.HasColumnName("NOM_ESTOQUE")
-                .HasMaxLength(50)
-                .IsRequired();
-        }
-    }
+			Property(e => e.IdEstoque)
+				.HasColumnName("IDT_ESTOQUE");
+
+			Property(e => e.Nome)
+				.HasColumnName("NOM_ESTOQUE")
+				.HasMaxLength(50)
+				.IsRequired();
+		}
+	}
 }

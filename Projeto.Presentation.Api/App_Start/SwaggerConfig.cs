@@ -251,5 +251,5 @@ namespace Projeto.Presentation.Api
 						//c.EnableApiKeySupport("apiKey", "header");
 					});
 		}
-	}
+    }
 }

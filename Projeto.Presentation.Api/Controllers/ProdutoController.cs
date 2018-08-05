@@ -1,8 +1,6 @@
 ﻿using Projeto.Application.Contracts;
 using Projeto.Application.ViewModels.Produtos;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -25,35 +23,75 @@ namespace Projeto.Presentation.Api.Controllers
         [Route("cadastrar")]
         public HttpResponseMessage Post(ProdutoCadastroViewModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                appService.Cadastrar(model);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpPut]
         [Route("atualizar")]
         public HttpResponseMessage Put(ProdutoEdicaoViewModel model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                appService.Atualizar(model);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpDelete]
         [Route("excluir")]
         public HttpResponseMessage Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                appService.Excluir(id);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpGet]
         [Route("consultar")]
         public HttpResponseMessage GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                appService.ConsultarTodos();
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpGet]
         [Route("obter")]
         public HttpResponseMessage GetById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                appService.ConsultarPorId(id);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
