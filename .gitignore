@@ -1,22 +1,18 @@
 
-Projeto\.Application/bin/Debug/
+Projeto\.Application/bin/
+
+Projeto\.Application/obj/
+
+Projeto\.Domain/bin/
 
 
-Projeto\.Application/obj/Debug/
-
-
-Projeto\.Domain/obj/Debug/
-
+Projeto\.Domain/obj/
 
 Projeto\.Infra\.Data/bin/
 
 
-Projeto\.Domain/bin/
-
-Projeto\.Infra\.Data/obj/Debug/
-
-
+Projeto\.Infra\.Data/obj/
 Projeto\.Presentation\.Api/bin/
 
 
-Projeto\.Presentation\.Api/obj/Debug/
+Projeto\.Presentation\.Api/obj/
