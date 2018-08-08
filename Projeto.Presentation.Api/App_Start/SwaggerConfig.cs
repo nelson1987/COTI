@@ -1,13 +1,13 @@
-using System.Web.Http;
-using WebActivatorEx;
 using Projeto.Presentation.Api;
 using Swashbuckle.Application;
+using System.Web.Http;
+using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace Projeto.Presentation.Api
 {
-	public class SwaggerConfig
+    public class SwaggerConfig
 	{
 		public static void Register()
 		{

@@ -1,9 +1,5 @@
-﻿using System;
+﻿using Projeto.Application.ViewModels.Estoques;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Projeto.Application.ViewModels.Estoques;
 
 namespace Projeto.Application.Contracts
 {

@@ -1,9 +1,5 @@
-﻿using System;
+﻿using Projeto.Application.ViewModels.Produtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Projeto.Application.ViewModels.Produtos;
 
 namespace Projeto.Application.Contracts
 {

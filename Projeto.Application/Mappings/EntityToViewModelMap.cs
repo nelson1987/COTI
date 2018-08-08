@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Projeto.Application.ViewModels.Estoques;
 using Projeto.Application.ViewModels.Produtos;
 using Projeto.Domain.Entities;
+using System.Linq;
 
 namespace Projeto.Application.Mappings
 {

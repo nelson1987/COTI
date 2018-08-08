@@ -1,13 +1,9 @@
-﻿using Projeto.Application.Contracts;
-using Projeto.Domain.Contracts.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Projeto.Application.Contracts;
 using Projeto.Application.ViewModels.Produtos;
-using AutoMapper;
+using Projeto.Domain.Contracts.Services;
 using Projeto.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Projeto.Application.Services
 {
