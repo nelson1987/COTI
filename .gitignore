@@ -19,3 +19,5 @@ Projeto\.Presentation\.Api/obj/
 
 packages/
 \.vs/Aula02/v15/
+
+*.ldf

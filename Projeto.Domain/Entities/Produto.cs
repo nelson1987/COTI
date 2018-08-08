@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Projeto.Domain.Entities
+﻿namespace Projeto.Domain.Entities
 {
     public class Produto
     {
@@ -12,7 +6,8 @@ namespace Projeto.Domain.Entities
         public virtual string Nome { get; set; }
         public virtual decimal Preco { get; set; }
         public virtual int Quantidade { get; set; }
-        public virtual int IdEstoque { get; set; }
+        //public virtual int IdEstoque { get; set; }
+        protected virtual int IdEstoque { get { return Estoque.IdEstoque; } }
 
         #region Associações
 
