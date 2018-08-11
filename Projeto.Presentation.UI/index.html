@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="appAula">
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -8,9 +8,58 @@
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body class="container">
+    <!--Inicio Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sistema Modelo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">Página inicial <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Estoque
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#estoque/cadastro">Cadastrar Estoques</a>
+                        <a class="dropdown-item" href="#estoque/consulta">Consultar Estoques</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Produto
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#produto/cadastro">Cadastrar Produtos</a>
+                        <a class="dropdown-item" href="#produto/consulta">Consultar Produtos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Fim Menu-->
+    <div class="row container">
+        <div class="col-md-12">
 
+            <h2>Seja bem vindo ao sistema</h2>
+            Controle de Estoques e Produtos
+            <hr />
 
+            <ul>
+                <li>Arquitetura DDD - Domain Driven Design</li>
+                <li>Entity Framework</li>
+                <li>Simple Injector</li>
+                <li>Auto Mapper</li>
+                <li>Asp.Net WebApi</li>
+                <li>Bootstrap e Angular JS</li>
+            </ul>
+            <div ng-view></div>
+        </div>
+    </div>
 
     <!--JQuery-->
     <script src="Scripts/jquery-3.0.0.min.js"></script>
