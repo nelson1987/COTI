@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{44FE8C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto.Infra.Message", "Projeto.Infra.Message\Projeto.Infra.Message.csproj", "{889DD249-C84E-4A22-B38F-F3C995EE4657}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto.Presentation.UI", "Projeto.Presentation.UI\Projeto.Presentation.UI.csproj", "{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{889DD249-C84E-4A22-B38F-F3C995EE4657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{889DD249-C84E-4A22-B38F-F3C995EE4657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{889DD249-C84E-4A22-B38F-F3C995EE4657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{45B7F6DE-16F5-4423-A999-8F51D4172B1E} = {7CBF6851-AED1-456F-BF05-D0C4B4D650DF}
 		{BB3CAC70-0662-4314-80E3-049A45571F30} = {7973B71E-DC8D-4D7B-BF50-85A1F9CF2B4A}
 		{889DD249-C84E-4A22-B38F-F3C995EE4657} = {F58949FA-6B48-47C0-9D9C-CD9A7845191B}
+		{9CE4CE81-2B0C-4604-96A4-37D6CBF17AED} = {138A8994-FB74-430B-B565-B3F3730EB8AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFBB8112-93C6-4E9C-ADAE-AA4F62EEBA4D}
