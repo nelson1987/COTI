@@ -42,22 +42,23 @@
         </div>
     </nav>
     <!--Fim Menu-->
-    <div class="row container">
-        <div class="col-md-12 pt-3">
-            <div ng-hide="{{hideContent==true}}">
-                <h2>Seja bem vindo ao sistema</h2>
-                Controle de Estoques e Produtos
-                <hr />
+    <div class="row">
+        <div class="col-md-4 pt-3">
 
-                <ul>
-                    <li>Arquitetura DDD - Domain Driven Design</li>
-                    <li>Entity Framework</li>
-                    <li>Simple Injector</li>
-                    <li>Auto Mapper</li>
-                    <li>Asp.Net WebApi</li>
-                    <li>Bootstrap e Angular JS</li>
-                </ul>
-            </div>
+            <h4>Seja bem vindo ao sistema</h4>
+            Controle de Estoques e Produtos
+
+            <ul>
+                <li>Arquitetura DDD - Domain Driven Design</li>
+                <li>Entity Framework</li>
+                <li>Simple Injector</li>
+                <li>Auto Mapper</li>
+                <li>Asp.Net WebApi</li>
+                <li>Bootstrap e Angular JS</li>
+            </ul>
+
+        </div>
+        <div class="col-md-8 pt-3">
             <div ng-view></div>
         </div>
     </div>

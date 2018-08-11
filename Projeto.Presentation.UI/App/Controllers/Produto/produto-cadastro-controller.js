@@ -1,3 +1,3 @@
 ﻿app.controller('produto-cadastro-controller',
-    function ($scope) {
+    function ($scope, $produtoServices) {
     });

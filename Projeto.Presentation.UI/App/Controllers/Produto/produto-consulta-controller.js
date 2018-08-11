@@ -1,3 +1,3 @@
 ﻿app.controller('produto-consulta-controller',
-    function ($scope) {
+    function ($scope, $produtoServices) {
     });
