@@ -43,20 +43,21 @@
     </nav>
     <!--Fim Menu-->
     <div class="row container">
-        <div class="col-md-12">
+        <div class="col-md-12 pt-3">
+            <div ng-hide="{{hideContent==true}}">
+                <h2>Seja bem vindo ao sistema</h2>
+                Controle de Estoques e Produtos
+                <hr />
 
-            <h2>Seja bem vindo ao sistema</h2>
-            Controle de Estoques e Produtos
-            <hr />
-
-            <ul>
-                <li>Arquitetura DDD - Domain Driven Design</li>
-                <li>Entity Framework</li>
-                <li>Simple Injector</li>
-                <li>Auto Mapper</li>
-                <li>Asp.Net WebApi</li>
-                <li>Bootstrap e Angular JS</li>
-            </ul>
+                <ul>
+                    <li>Arquitetura DDD - Domain Driven Design</li>
+                    <li>Entity Framework</li>
+                    <li>Simple Injector</li>
+                    <li>Auto Mapper</li>
+                    <li>Asp.Net WebApi</li>
+                    <li>Bootstrap e Angular JS</li>
+                </ul>
+            </div>
             <div ng-view></div>
         </div>
     </div>

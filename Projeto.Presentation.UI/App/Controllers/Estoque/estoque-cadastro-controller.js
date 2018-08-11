@@ -1,4 +1,3 @@
 ﻿app.controller('estoque-cadastro-controller',
-    function () {
-
+    function ($scope, $estoqueServices) {
     });
