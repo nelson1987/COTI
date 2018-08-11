@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73017554-2882-40B0-9614-14F149B8C18D}</ProjectGuid>
+    <ProjectGuid>{889DD249-C84E-4A22-B38F-F3C995EE4657}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Projeto.Domain</RootNamespace>
-    <AssemblyName>Projeto.Domain</AssemblyName>
+    <RootNamespace>Projeto.Infra.Message</RootNamespace>
+    <AssemblyName>Projeto.Infra.Message</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>97ff7f4b</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,21 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Messages\IMessage.cs" />
-    <Compile Include="Contracts\Repositories\IBaseRepository.cs" />
-    <Compile Include="Contracts\Repositories\IEstoqueRepository.cs" />
-    <Compile Include="Contracts\Repositories\IProdutoRepository.cs" />
-    <Compile Include="Contracts\Repositories\IUnitOfWork.cs" />
-    <Compile Include="Contracts\Services\IBaseDomainService.cs" />
-    <Compile Include="Contracts\Services\IEstoqueDomainService.cs" />
-    <Compile Include="Contracts\Services\IProdutoDomainService.cs" />
-    <Compile Include="Entities\Estoque.cs" />
-    <Compile Include="Entities\Fornecedor.cs" />
-    <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Mail\SendMail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BaseDomainService.cs" />
-    <Compile Include="Services\EstoqueDomainService.cs" />
-    <Compile Include="Services\ProdutoDomainService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Domain\Projeto.Domain.csproj">
+      <Project>{73017554-2882-40B0-9614-14F149B8C18D}</Project>
+      <Name>Projeto.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

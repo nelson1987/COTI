@@ -1,5 +1,6 @@
 ﻿using Projeto.Application.Contracts;
 using Projeto.Application.ViewModels.Produtos;
+using Projeto.Presentation.Api.Util;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -23,30 +24,44 @@ namespace Projeto.Presentation.Api.Controllers
         [Route("cadastrar")]
         public HttpResponseMessage Post(ProdutoCadastroViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                appService.Cadastrar(model);
+                try
+                {
+                    appService.Cadastrar(model);
+                    //200 - Sucesso - OK
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                catch (Exception ex)
+                {
+                    //500 - Erro de Aplicação - Internal Server Error
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
-            }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            //400 - Requisição inválida - Bad Request
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ValidationUtil.GetErrorMessages(ModelState));
         }
 
         [HttpPut]
         [Route("atualizar")]
         public HttpResponseMessage Put(ProdutoEdicaoViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                appService.Atualizar(model);
+                try
+                {
+                    appService.Atualizar(model);
+                    //200 - Sucesso - OK
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                catch (Exception ex)
+                {
+                    //500 - Erro de Aplicação - Internal Server Error
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
-            }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            //400 - Requisição inválida - Bad Request
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ValidationUtil.GetErrorMessages(ModelState));
         }
 
         [HttpDelete]
@@ -55,13 +70,22 @@ namespace Projeto.Presentation.Api.Controllers
         {
             try
             {
+                var produto = appService.ConsultarPorId(id);
+
+                if (produto == null)
+                    //Não encontrado
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+
                 appService.Excluir(id);
+
+                //200 - Sucesso - OK
+                return Request.CreateResponse(HttpStatusCode.OK, produto);
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                //500 - Erro de Aplicação - Internal Server Error
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpGet]
@@ -70,13 +94,12 @@ namespace Projeto.Presentation.Api.Controllers
         {
             try
             {
-                appService.ConsultarTodos();
+                return Request.CreateResponse(HttpStatusCode.OK, appService.ConsultarTodos());
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpGet]
@@ -85,13 +108,17 @@ namespace Projeto.Presentation.Api.Controllers
         {
             try
             {
-                appService.ConsultarPorId(id);
+                var produto = appService.ConsultarPorId(id);
+
+                if (produto == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+
+                return Request.CreateResponse(HttpStatusCode.OK, produto);
             }
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

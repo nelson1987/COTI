@@ -9,11 +9,11 @@ namespace Projeto.Application.ViewModels.Produtos
         [Required(ErrorMessage = "Informe o Nome do Produto.")]
         public string Nome { get; set; }
 
-        [Range(0.01, 9999, ErrorMessage = "Informe um valor entre {1} e {2}")]
+        [Range(0.01, 99999.99, ErrorMessage = "Informe um valor entre {1} e {2}")]
         [Required(ErrorMessage = "Informe o Preço do Produto.")]
         public decimal Preco { get; set; }
 
-        [Range(1, 999, ErrorMessage = "Informe um valor entre {1} e {2}")]
+        [Range(1, 9999, ErrorMessage = "Informe um valor entre {1} e {2}")]
         [Required(ErrorMessage = "Informe a Quantidade do Produto.")]
         public int Quantidade { get; set; }
 

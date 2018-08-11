@@ -18,6 +18,10 @@ Projeto\.Presentation\.Api/bin/
 Projeto\.Presentation\.Api/obj/
 
 packages/
-\.vs/Aula02/v15/
+
+\.vs/
 
 *.ldf
+
+\.nuget/
+
