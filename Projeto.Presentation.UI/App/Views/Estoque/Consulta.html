@@ -1,2 +1,32 @@
 ﻿<h2>Consulta de Estoque</h2>
 <hr />
+<div class="alert alert-danger" ng-show="erro">
+    <strong>{{erro}}</strong>
+</div>
+<table class="table table-hover" ng-init="consultar">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Qtd produtos</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="estoque in estoqueList">
+            <td>{{estoque.Id}}</td>
+            <td>{{estoque.Nome}}</td>
+            <td>{{estoque.Quantidade}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" ng-click="alterar">Alterar</button>
+                <button class="btn btn-danger btn-sm" ng-click="excluir(estoque.Id)">Excluir</button>
+                <button class="btn btn-default btn-sm" ng-click="detalhar(estoque.Id)">Detalhar</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">Registros exibidos: {{estoqueList.length}}</td>
+        </tr>
+    </tfoot>
+</table>
