@@ -4,7 +4,13 @@
     <div class="col-md-6">
         <label>Nome:</label>
         <input type="text" class="form-control" placeholder="Nome do Estoque" ng-model="model.Nome" />
-        <br />
+        <div class="text-danger">
+            <ul>
+                <li ng-repeat="msg in validacoes['model.Nome']">
+                    <strong>{{msg}}</strong>
+                </li>
+            </ul>
+        </div>
         <button class="btn btn-success" ng-click="cadastrar()" ng-disabled="desabilitarBotao">
             Cadastrar Estoque
         </button>

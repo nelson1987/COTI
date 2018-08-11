@@ -8,6 +8,7 @@
             $scope.desabilitarBotao = true;
             $scope.sucesso = '';
             $scope.erro = '';
+            $scope.validacoes = [];
 
             $estoqueServices.cadastrar($scope.model)
                 .then(function (d) {
@@ -18,8 +19,12 @@
 
                 })
                 .catch(function (e) {
-                    console.log("erro", e);
-                    $scope.erro = 'Ocorreu um erro:' + e.data;
+                    if (e.status == 500)
+                        $scope.erro = 'Ocorreu um erro:' + e.data;
+                    else if (e.status == 400) {
+                        $scope.erro = 'Ocorreram erros de validação.';
+                        $scope.validacoes = e.data;
+                    }
 
                 })
                 .finally(function () {
