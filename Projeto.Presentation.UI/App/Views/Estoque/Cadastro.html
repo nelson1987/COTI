@@ -2,12 +2,13 @@
 <hr />
 <div class="row">
     <div class="col-md-6">
-        <label>Nome Do Estoque:</label>
+        <label>Nome:</label>
         <input type="text" class="form-control" placeholder="Nome do Estoque" ng-model="model.Nome" />
         <br />
-        <button class="btn btn-success" ng-click="cadastrar()">
+        <button class="btn btn-success" ng-click="cadastrar()" ng-disabled="desabilitarBotao">
             Cadastrar Estoque
         </button>
+        <br />
         <br />
         <div class="alert alert-success" ng-show="sucesso"><strong>{{sucesso}}</strong></div>
         <div class="alert alert-danger" ng-show="erro"><strong>{{erro}}</strong></div>
