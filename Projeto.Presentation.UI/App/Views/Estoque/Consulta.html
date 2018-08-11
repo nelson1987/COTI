@@ -3,6 +3,12 @@
 <div class="alert alert-danger" ng-show="erro">
     <strong>{{erro}}</strong>
 </div>
+
+<div>
+    <label>Filtrar</label>
+    <input type="text" class="form-control" placeholder="Digite aqui" ng-model="filtro" />
+</div>
+<br />
 <table class="table table-hover" ng-init="consultar">
     <thead>
         <tr>
@@ -13,10 +19,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="estoque in estoqueList">
-            <td>{{estoque.Id}}</td>
+        <tr ng-repeat="estoque in estoqueList | filter: filtro">
+            <td>{{estoque.IdEstoque}}</td>
             <td>{{estoque.Nome}}</td>
-            <td>{{estoque.Quantidade}}</td>
+            <td>{{estoque.QuantidadeDeProdutos}}</td>
             <td>
                 <button class="btn btn-primary btn-sm" ng-click="alterar">Alterar</button>
                 <button class="btn btn-danger btn-sm" ng-click="excluir(estoque.Id)">Excluir</button>
@@ -26,7 +32,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="4">Registros exibidos: {{estoqueList.length}}</td>
+            <td colspan="4">Registros exibidos: {{(estoqueList | filter: filtro).length}}</td>
         </tr>
     </tfoot>
 </table>
