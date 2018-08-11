@@ -74,6 +74,9 @@
     <Content Include="App\Controllers\Estoque\estoque-cadastro-controller.js" />
     <Content Include="App\Controllers\Produto\produto-cadastro-controller.js" />
     <Content Include="App\Controllers\Produto\produto-consulta-controller.js" />
+    <Content Include="App\routes.js" />
+    <Content Include="App\Services\estoque-services.js" />
+    <Content Include="App\Services\produto-services.js" />
     <Content Include="App\Views\Estoque\Cadastro.html" />
     <Content Include="App\Views\Estoque\Consulta.html" />
     <Content Include="App\Views\Produto\Cadastro.html" />
@@ -166,9 +169,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
