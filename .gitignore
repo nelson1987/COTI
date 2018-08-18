@@ -25,3 +25,7 @@ packages/
 /.nuget
 
 /.vs
+
+Projeto\.Presentation\.UI/obj/Debug/
+
+Projeto\.Presentation\.UI/bin/

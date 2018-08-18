@@ -1,2 +1,59 @@
 ﻿<h2>Cadastro de Produto</h2>
 <hr />
+<div class="row">
+    <div class="col-md-6">
+        <label>Nome:</label>
+        <input type="text" class="form-control" placeholder="Nome do Produto" ng-model="model.Nome" />
+        <div class="text-danger">
+            <ul>
+                <li ng-repeat="msg in validacoes['model.Nome']">
+                    <strong>{{msg}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label>Preco:</label>
+        <input type="text" class="form-control" placeholder="Preço do Produto" ng-model="model.Preco" />
+        <div class="text-danger">
+            <ul>
+                <li ng-repeat="msg in validacoes['model.Preco']">
+                    <strong>{{msg}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label>Quantidade:</label>
+        <input type="text" class="form-control" placeholder="Quantidade do Produto" ng-model="model.Quantidade" />
+        <div class="text-danger">
+            <ul>
+                <li ng-repeat="msg in validacoes['model.Quantidade']">
+                    <strong>{{msg}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label>Estoque:</label>
+        <select class="form-control" ng-model="model.IdEstoque" ng-init="obterEstoque()">
+            <option value="">--Selecione--</option>
+        </select>
+        <div class="text-danger">
+            <ul>
+                <li ng-repeat="msg in validacoes['model.IdEstoque']">
+                    <strong>{{msg}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-success" ng-click="cadastrar()" ng-disabled="desabilitarBotao">
+            Cadastrar Estoque
+        </button>
+        <br />
+        <br />
+        <div class="alert alert-success" ng-show="sucesso"><strong>{{sucesso}}</strong></div>
+        <div class="alert alert-danger" ng-show="erro"><strong>{{erro}}</strong></div>
+    </div>
+</div>
