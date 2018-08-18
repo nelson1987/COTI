@@ -36,8 +36,11 @@
     </div>
     <div class="col-md-6">
         <label>Estoque:</label>
-        <select class="form-control" ng-model="model.IdEstoque" ng-init="obterEstoque()">
+        <select class="form-control" ng-model="model.IdEstoque" ng-init="obterEstoques()">
             <option value="">--Selecione--</option>
+            <option ng-repeat="estoque in EstoqueList" value="{{estoque.IdEstoque}}">
+                {{estoque.Nome}} ({{estoque.QuantidadeDeProdutos}})
+            </option>
         </select>
         <div class="text-danger">
             <ul>

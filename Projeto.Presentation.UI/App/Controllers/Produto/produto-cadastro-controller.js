@@ -1,13 +1,17 @@
 ﻿app.controller('produto-cadastro-controller',
     function ($scope, $produtoServices, $estoqueServices) {
-        $scope.model = {
-            Nome: '',
-            Preco: 0,
-            Quantidade: 0,
-            IdEstoque: ''
+        $scope.LimparModelo = function () {
+            return {
+                Nome: '',
+                Preco: 0,
+                Quantidade: 0,
+                IdEstoque: ''
+            }
         };
+        $scope.model = $scope.LimparModelo();
 
         $scope.obterEstoques = function () {
+            console.log("sucesso");
             //Executar serviço de consulta de estoques da API
             $estoqueServices.consultar()
                 .then(function (d) {
@@ -43,7 +47,7 @@
                     console.log("sucesso", d);
 
                     $scope.sucesso = 'Produto cadastrado com sucesso!';
-                    $scope.model.Nome = '';
+                    $scope.LimparModelo();
 
                 })
                 .catch(function (e) {
