@@ -19,10 +19,10 @@ Projeto\.Presentation\.Api/obj/
 
 packages/
 
-.vs\
+.vs/
 
 *.ldf
 
-\.nuget/
+.nuget/
 
 /.vs
